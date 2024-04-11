@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/lineChartFragment"
+        android:name="com.example.chartapp.LineChartFragment"
+        android:label="fragment_line_chart"
+        tools:layout="@layout/fragment_line_chart" />
+    <fragment
+        android:id="@+id/barChartFragment"
+        android:name="com.example.chartapp.BarChartFragment"
+        android:label="fragment_bar_chart"
+        tools:layout="@layout/fragment_bar_chart" />
+    <fragment
+        android:id="@+id/pieChartFragment"
+        android:name="com.example.chartapp.PieChartFragment"
+        android:label="fragment_pie_chart"
+        tools:layout="@layout/fragment_pie_chart" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.chartapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_barChartFragment"
+            app:destination="@id/barChartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lineChartFragment"
+            app:destination="@id/lineChartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pieChartFragment"
+            app:destination="@id/pieChartFragment" />
+    </fragment>
+</navigation>

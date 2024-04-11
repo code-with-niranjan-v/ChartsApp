@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/nayanza"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LineChartFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/lineChart"
+                android:text="Line Chart"
+                android:id="@+id/tvTitle"
+                app:layout_constraintVertical_bias="0.1"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:letterSpacing="0.1"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_margin="24dp"
+                android:padding="30dp"
+                android:layout_height="500dp"
+                android:id="@+id/lineChart"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvxml"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XML Code"
+                app:layout_constraintTop_toBottomOf="@+id/lineChart"
+                app:layout_constraintBottom_toTopOf="@+id/tvXmlCode"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/tvxml"
+                android:textSize="20sp"
+                android:textColor="@color/night"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lineChart_xml"
+                android:padding="16dp"
+                android:textColor="#DCCFEC"
+                android:id="@+id/tvXmlCode"
+                app:layout_constraintTop_toBottomOf="@+id/tvxml"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="18dp"
+                android:background="@drawable/code_bg"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvKotlin"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotlin Code"
+                app:layout_constraintTop_toBottomOf="@+id/tvXmlCode"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/tvKotlin"
+                android:textSize="20sp"
+                android:textColor="@color/night"
+                app:layout_constraintBottom_toTopOf="@+id/tvKotlinCode"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linechart_kotlin_code"
+                android:padding="16dp"
+                android:textColor="#DCCFEC"
+                android:id="@+id/tvKotlinCode"
+                app:layout_constraintTop_toBottomOf="@+id/tvKotlin"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="18dp"
+                android:background="@drawable/code_bg"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="50dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

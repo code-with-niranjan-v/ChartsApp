@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nayanza">#E1F4CB</color>
+    <color name="night">#071108</color>
+    <color name="thistle">#DCCFEC</color>
+</resources>
