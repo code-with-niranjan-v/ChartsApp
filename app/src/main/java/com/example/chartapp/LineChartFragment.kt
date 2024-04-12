@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.chartapp.data.listOfCode
 import com.example.chartapp.databinding.FragmentBarChartBinding
 import com.example.chartapp.databinding.FragmentLineChartBinding
+import com.example.chartapp.utils.CodeAdapter
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -36,7 +39,16 @@ class LineChartFragment : Fragment() {
 
         lineChartBinding.lineChart.data = lineData
         lineChartBinding.lineChart.invalidate()
+
+        val adapter = CodeAdapter(listOfCode)
+        lineChartBinding.recyclerView.adapter = adapter
+        lineChartBinding.recyclerView.layoutManager  = LinearLayoutManager(requireContext())
+
     }
 
+    private fun customizeLineChart(){
+        //setting border
+        lineChartBinding.lineChart.setDrawBorders(true)
+    }
 
 }

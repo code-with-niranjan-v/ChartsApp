@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.chartapp.data.listOfBarChartCode
 import com.example.chartapp.databinding.FragmentBarChartBinding
+import com.example.chartapp.utils.CodeAdapter
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -38,6 +41,12 @@ class BarChartFragment : Fragment() {
 
         barChartBinding.barChart.data = barData
         barChartBinding.barChart.invalidate()
+
+        val adapter = CodeAdapter(listOfBarChartCode)
+        barChartBinding.recyclerView.adapter = adapter
+        barChartBinding.recyclerView.layoutManager  = LinearLayoutManager(requireContext())
+
+
 
     }
 
