@@ -14,7 +14,8 @@ val listOfCode = listOf<Code>(
                 "app:layout_constraintTop_toBottomOf=\"@+id/tvTitle\"\n" +
                 "app:layout_constraintBottom_toTopOf=\"@+id/recyclerView\"\n" +
                 "app:layout_constraintStart_toStartOf=\"parent\"\n" +
-                "app:layout_constraintEnd_toEndOf=\"parent\"/>"
+                "app:layout_constraintEnd_toEndOf=\"parent\"/>",
+        id = 0
     ),
     Code(
         "Kotlin Code",
@@ -25,6 +26,19 @@ val listOfCode = listOf<Code>(
                 "        val lineData = LineData(lineDataSetList)\n" +
                 "\n" +
                 "        lineChartBinding.lineChart.data = lineData\n" +
-                "        lineChartBinding.lineChart.invalidate()"
+                "        lineChartBinding.lineChart.invalidate()",
+        id = 1
+    ),
+    Code(
+        "Styling the Chart",
+        "lineChartBinding.lineChart.setDrawBorders(true)\n" +
+                "lineChartBinding.lineChart.setBackgroundColor(Color.WHITE)",
+        id = 2
+    ),
+    Code(
+        "Styling the Line Chart\n Changing Line color and Width",
+        "lineDataSet.setCircleColor(R.color.night)\n" +
+                "lineDataSet.lineWidth = 3f",
+        id = 3
     )
 )

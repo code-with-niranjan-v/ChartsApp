@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chartapp.data.listOfBarChartCode
 import com.example.chartapp.databinding.FragmentBarChartBinding
 import com.example.chartapp.utils.CodeAdapter
+import com.example.chartapp.utils.Listener
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -17,7 +18,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 
 
-class BarChartFragment : Fragment() {
+class BarChartFragment : Fragment(),Listener {
 
     private lateinit var barChartBinding: FragmentBarChartBinding
 
@@ -42,12 +43,16 @@ class BarChartFragment : Fragment() {
         barChartBinding.barChart.data = barData
         barChartBinding.barChart.invalidate()
 
-        val adapter = CodeAdapter(listOfBarChartCode)
+        val adapter = CodeAdapter(listOfBarChartCode,this)
         barChartBinding.recyclerView.adapter = adapter
         barChartBinding.recyclerView.layoutManager  = LinearLayoutManager(requireContext())
 
 
 
+    }
+
+    override fun onClick(id: Int) {
+        TODO("Not yet implemented")
     }
 
 
